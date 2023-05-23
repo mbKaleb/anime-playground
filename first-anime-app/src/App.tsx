@@ -1,11 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Box } from './components/Box'
+
+
 
 function App() {
   return (
-    <div className="App">
-      <div></div>
+    <div className="App flex m-2 justify-center bg-red-200">
+      <Box />
     </div>
   );
 }
