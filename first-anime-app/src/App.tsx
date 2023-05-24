@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <div className="App bg-black">
-       <div className="outline outline-white flex justify-center ">
+       <div className="flex justify-center ">
         <FlyingBox svg={svg1} id={'id-1'} />
       </div>
        <div>

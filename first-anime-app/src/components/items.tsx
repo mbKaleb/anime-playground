@@ -43,9 +43,15 @@ const FlyingBox = (props:any) => {
 
 const LineDrawing = (props:any) => {
 	const { svg } = props;
+	let el = document.getElementById(svg?.props.name);
+	
+	useEffect(() => {
+		if (typeof el === "undefined") el = document.getElementById(svg?.props.name);
+	}, [])
+
 	useEffect(() => {
 		anime({
-			targets: '#'+svg.props.name,
+			targets: el,
 			strokeDashoffset: [anime.setDashoffset, 10],
 			easing: 'easeInOutSine',
 			duration: 50000,
@@ -53,10 +59,10 @@ const LineDrawing = (props:any) => {
 			direction: 'alternate',
 			loop: true
 		});
-	}, [])
+	}, [el])
 
 	return (
-		<div className="flex justify-center">
+		<div className="flex justify-center outline outline-1 outline-white ">
 			{svg}
 		</div>
 	)
@@ -94,7 +100,7 @@ const CrazyLines = (props:any) => {
 		}, [])
 
 	return (
-		<div className="">
+		<div className="outline outline-1 outline-white">
 			{svg}
 		</div>
 	)
