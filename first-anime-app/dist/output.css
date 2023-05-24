@@ -571,6 +571,26 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.top-1 {
+  top: 0.25rem;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.left-80 {
+  left: 20rem;
+}
+
 .m-2 {
   margin: 0.5rem;
 }
@@ -583,8 +603,16 @@ video {
   height: 8rem;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
 .w-32 {
   width: 8rem;
+}
+
+.w-2 {
+  width: 0.5rem;
 }
 
 .justify-center {
