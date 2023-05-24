@@ -47,7 +47,7 @@ const LineDrawing = (props:any) => {
 	useEffect(() => {
 		anime({
 			targets: '#name',
-			strokeDashoffset: [anime.setDashoffset, 1],
+			strokeDashoffset: [anime.setDashoffset, 10],
 			easing: 'easeInOutSine',
 			duration: 30000,
 			delay: function(el, i) { return i * 250 },
