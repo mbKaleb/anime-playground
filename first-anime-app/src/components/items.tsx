@@ -46,10 +46,18 @@ const LineDrawing = (props:any) => {
 	let el = document.getElementById(svg?.props.name);
 	
 	useEffect(() => {
-		if (typeof el === "undefined") el = document.getElementById(svg?.props.name);
+		if (typeof el == ("object" || null || "undefined")) {
+			el = document.getElementById(svg?.props.name);
+			console.log('ran')
+		} else {
+			throw(new Error("Data did not load in runtime"))
+		}
 	}, [])
 
 	useEffect(() => {
+		if (typeof el !== ("object" || null || "undefined")) {
+			el = document.getElementById(svg?.props.name);
+		}
 		anime({
 			targets: el,
 			strokeDashoffset: [anime.setDashoffset, 10],
