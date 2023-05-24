@@ -43,13 +43,12 @@ const FlyingBox = (props:any) => {
 
 const LineDrawing = (props:any) => {
 	const { svg } = props;
-
 	useEffect(() => {
 		anime({
-			targets: '#name',
+			targets: '#'+svg.props.name,
 			strokeDashoffset: [anime.setDashoffset, 10],
 			easing: 'easeInOutSine',
-			duration: 30000,
+			duration: 50000,
 			delay: function(el, i) { return i * 250 },
 			direction: 'alternate',
 			loop: true
