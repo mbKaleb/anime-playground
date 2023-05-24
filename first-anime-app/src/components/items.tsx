@@ -62,4 +62,42 @@ const LineDrawing = (props:any) => {
 	)
 }
 
-export { Box, FlyingBox, LineDrawing };
+const CrazyLines = (props:any) => {
+	const { svg } = props;
+
+	let pathEls = document.querySelector("#" + svg.props.name)?.children[0].childNodes 
+
+	useEffect(() => {
+		if (typeof pathEls === "undefined") {
+			pathEls = document.querySelector("#" + svg.props.name)?.children[0].childNodes 
+		}
+	}, [pathEls])
+
+	useEffect(() => {
+			if (pathEls) {
+			for (var i = 0; i < pathEls.length; i++) {
+				var pathEl:any = pathEls[i];
+				var offset = anime.setDashoffset(pathEl);
+				pathEl.setAttribute('stroke-dashoffset', offset);
+				anime({
+					targets: pathEl,
+					strokeDashoffset: [offset, 0],
+					duration: anime.random(6000, 10000),
+					delay: anime.random(0, 2000),
+					loop: true,
+					direction: 'alternate',
+					easing: 'easeInOutSine',
+					autoplay: true
+				});
+			}
+			}
+		}, [])
+
+	return (
+		<div className="">
+			{svg}
+		</div>
+	)
+}
+
+export { Box, FlyingBox, LineDrawing, CrazyLines };
