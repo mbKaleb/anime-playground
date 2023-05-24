@@ -2,6 +2,13 @@ import { useEffect } from "react";
 import anime from "animejs";
 
 const Box = () => {
+	return (<>
+		<div className="box absolute relative left-1 -top-1 w-2 h-2 outline outline-1 outline-white bg-black" id="box"  ></div>
+	</>) 
+}
+
+const FlyingBox = (props:any) => {
+	const { svg } = props;
 	useEffect(() => {
 		const path = anime.path('path');
 		anime({
@@ -21,24 +28,11 @@ const Box = () => {
 			easing: 'easeInOutExpo'
 		});
 	}, [])
-	return (<>
-		<div className="box absolute top-1 left-79 w-2 h-2 bg-gray-400" id="box"  ></div>
-	</>) 
-}
 
-
-const Box2 = () => {
-	return (<>
-		<div className="box absolute top-1 left-79 w-2 h-2 bg-gray-400" id="box"  ></div>
-	</>) 
-}
-
-const FlyingBox = (svg:any) => {
-	
 	return (
-		<div className="absolute flex justify-center ">
-			<Box2 />
-			<>{svg}</>
+		<div className="flex justify-center">
+			<div className=""><Box /></div>
+			<div className="">{svg}</div>ßß
 		</div>
 	)
 }
