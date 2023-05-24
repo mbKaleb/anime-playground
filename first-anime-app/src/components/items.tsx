@@ -1,28 +1,32 @@
 import { useEffect } from "react";
 import anime from "animejs";
 
-const Box = () => {
+const Box = (props:any) => {
+	const { id } = props;
+
 	return (<>
-		<div className="box absolute relative left-1 -top-1 w-2 h-2 outline outline-1 outline-white bg-black" id="box"  ></div>
+		<div className="box absolute relative left-1 -top-1 w-2 h-2 outline outline-3 outline-white bg-black" id={id}  ></div>
 	</>) 
 }
 
 const FlyingBox = (props:any) => {
-	const { svg } = props;
+
+	const { svg, id } = props;
 	useEffect(() => {
-		const path = anime.path('path');
+		const path = anime.path("#" + svg.props.name);
+
 		anime({
-			targets: "#box",
+			targets: "#"+id,
 			translateX: path('x'),
 			translateY: path("y"),
-			duration: 3000,
+			duration: 4000,
 			loop: true,
 			easing: 'linear'
 		});
 		anime({
-			targets: 'path',
-			opacity: 0,
-			duration: 6000,
+			targets: '#' + svg.props.name,
+			opacity: .4,
+			duration: 1000,
 			loop: true,
 			direction: 'alternate',
 			easing: 'easeInOutExpo'
@@ -31,10 +35,32 @@ const FlyingBox = (props:any) => {
 
 	return (
 		<div className="flex justify-center">
-			<div className=""><Box /></div>
-			<div className="">{svg}</div>ßß
+			<div className=""><Box id={id} /></div>
+			<div className="">{svg}</div>
 		</div>
 	)
 }
 
-export { Box, FlyingBox };
+const LineDrawing = (props:any) => {
+	const { svg } = props;
+
+	useEffect(() => {
+		anime({
+			targets: '#name',
+			strokeDashoffset: [anime.setDashoffset, 1],
+			easing: 'easeInOutSine',
+			duration: 30000,
+			delay: function(el, i) { return i * 250 },
+			direction: 'alternate',
+			loop: true
+		});
+	}, [])
+
+	return (
+		<div className="flex justify-center">
+			{svg}
+		</div>
+	)
+}
+
+export { Box, FlyingBox, LineDrawing };
