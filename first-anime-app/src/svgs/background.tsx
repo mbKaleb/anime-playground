@@ -1,0 +1,3 @@
+const background = <svg id="exsMwFdczRV1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><path d="M665.703811,161.081138h69.845608l34.922805-39.604563h381.405423l34.335328,39.604563h68.670651l34.335326-39.555899-.000001-57.637463-34.335326-34.56144h-589.179814l-34.922793,34.56144v57.637463l34.922793,39.555899Z" transform="translate(.000005 0)"  fill="" stroke="black" stroke-width="3" /></svg>
+
+export {background}

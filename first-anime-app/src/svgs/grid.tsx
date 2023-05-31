@@ -3,9 +3,9 @@ const svgGrid = <svg
        version="1.1"
        id="kalebGrid"
        name="kalebGrid"
-       width="1600"
-       height="1600"
-       viewBox="0 0 1600 1600"
+       width="100vw"
+       height="100vh"
+       viewBox="300 450 1000 900"
 >
       <g
          id="g8"

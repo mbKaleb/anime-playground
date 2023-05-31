@@ -7,7 +7,9 @@ module.exports = {
     './src/App.tsx'
     ],
   theme: {
-    extend: {},
+    extend: {
+
+    },
   },
   plugins: [],
 }
